@@ -1,0 +1,16 @@
+<ul class="list-group">
+    <li class="list-group-item list-group-item-dark"
+        (click)="saveMarker()">
+        + add
+    </li>
+
+    <li *ngFor="let marker of markersArray; let i = index"
+        class="list-group-item"
+        [ngStyle]="{'background-color': marker.color}"
+        (click)="goMarker(marker.markers!)"
+        (dblclick)="deleteMarker( i )">
+        Marker {{ i + 1 }}
+    </li>
+</ul>
+
+<div class="mapa-container" #map></div>
